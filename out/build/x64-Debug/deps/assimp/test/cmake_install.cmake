@@ -1,8 +1,8 @@
-# Install script for directory: C:/A2025 Infographie/PGJ1303 - Atelier 6/deps/assimp/test
+# Install script for directory: C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/deps/assimp/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/A2025 Infographie/PGJ1303 - Atelier 6/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/A2025 Infographie/PGJ1303 - Atelier 6/out/build/x64-Debug/deps/assimp/test/headercheck/cmake_install.cmake")
+  include("C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/out/build/x64-Debug/deps/assimp/test/headercheck/cmake_install.cmake")
 
 endif()
 

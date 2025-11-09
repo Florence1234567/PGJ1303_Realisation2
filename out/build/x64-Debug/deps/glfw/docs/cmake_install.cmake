@@ -1,8 +1,8 @@
-# Install script for directory: C:/A2025 Infographie/PGJ1303 - Atelier 6/deps/glfw/docs
+# Install script for directory: C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/deps/glfw/docs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/A2025 Infographie/PGJ1303 - Atelier 6/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -1,8 +1,8 @@
-# Install script for directory: C:/A2025 Infographie/PGJ1303 - Atelier 6/deps/assimp/contrib/zlib
+# Install script for directory: C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/deps/assimp/contrib/zlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/A2025 Infographie/PGJ1303 - Atelier 6/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,6 +33,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/A2025 Infographie/PGJ1303 - Atelier 6/out/build/x64-Debug/deps/assimp/contrib/zlib/zlibstaticd.lib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/out/build/x64-Debug/deps/assimp/contrib/zlib/zlibstaticd.lib")
 endif()
 
