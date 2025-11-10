@@ -6,9 +6,82 @@
 
 CMeshScene::CMeshScene()
 {
+	std::vector<std::string> fbxPaths = {
+	    "./models/hills01.fbx",           // hill
+	    "./models/tent_red.fbx",          // tent
+	    "./models/tree01.fbx",            // tree
+	    "./models/flower02_orange.fbx",   // flower orange
+	    "./models/mushrooom01_brown.fbx", // mushroom
+	    "./models/rock_big01.fbx",        // rock
+	    "./models/bush_berries_blue.fbx", // bush blue
+	    "./models/bush_berries_red.fbx",  // bush red
+	    "./models/flower02_pink.fbx",     // flower pink
+	    "./models/flower02_yellow.fbx",   // flower yellow
+	    "./models/grass01.fbx",           // grass 1
+	    "./models/grass03.fbx",           // grass 2
+	    "./models/grass01.fbx",           // extra grass 3
+	    "./models/grass03.fbx",           // extra grass 4
+	    "./models/flower02_pink.fbx",     // extra flower pink 2
+	    "./models/flower02_yellow.fbx"    // extra flower yellow 2
+	};
+
+	std::vector<glm::vec3> positions = {
+	    {0.0f, 0.0f, 0.0f},   // hill
+	    {6.5f, 4.6f, -5.0f},  // tent
+	    {9.0f, 3.8f, 6.0f},   // tree
+	    {-4.0f, 4.4f, 8.0f},  // flower orange
+	    {2.0f, 4.3f, -3.5f},  // mushroom
+	    {-6.0f, 4.4f, -5.5f}, // rock
+	    {-8.0f, 4.6f, 9.0f},  // bush blue
+	    {7.0f, 4.5f, 9.5f},   // bush red
+	    {-3.0f, 4.3f, 10.0f}, // flower pink
+	    {8.5f, 4.3f, -9.0f},  // flower yellow
+	    {2.5f, 4.4f, 6.5f},   // grass 1
+	    {5.5f, 4.3f, 2.0f},   // grass 2
+	    {-5.0f, 4.2f, 3.5f},  // grass 3 (new)
+	    {4.0f, 4.2f, 8.0f},   // grass 4 (new)
+	    {-7.0f, 4.3f, 5.0f},  // flower pink 2 (new)
+	    {6.5f, 4.3f, -7.5f}   // flower yellow 2 (new)
+	};
+
+	std::vector<glm::vec3> scales = {
+	    {0.02f, 0.02f, 0.02f},    // hill
+	    {0.006f, 0.006f, 0.006f}, // tent
+	    {0.016f, 0.022f, 0.016f}, // tree (taller)
+	    {0.013f, 0.013f, 0.013f}, // flower orange
+	    {0.010f, 0.010f, 0.010f}, // mushroom
+	    {0.006f, 0.006f, 0.006f}, // rock (small)
+	    {0.007f, 0.007f, 0.007f}, // bush blue
+	    {0.007f, 0.007f, 0.007f}, // bush red
+	    {0.013f, 0.013f, 0.013f}, // flower pink
+	    {0.013f, 0.013f, 0.013f}, // flower yellow
+	    {0.012f, 0.012f, 0.012f}, // grass 1
+	    {0.012f, 0.012f, 0.012f}, // grass 2
+	    {0.012f, 0.012f, 0.012f}, // grass 3
+	    {0.012f, 0.012f, 0.012f}, // grass 4
+	    {0.012f, 0.012f, 0.012f}, // flower pink 2
+	    {0.012f, 0.012f, 0.012f}  // flower yellow 2
+	};
+
+	for(size_t i = 0; i < fbxPaths.size(); ++i)
 	{
 		auto object = std::make_shared<CEnvironmentObject>();
-		object->SetScale(glm::vec3(0.000001f));
+		object->Init(fbxPaths[i], "./textures/colormap.png");
+		object->SetScale(scales[i]);
+		object->SetPosition(positions[i]);
+		object->SetRotation(glm::vec3(glm::radians(270.0f), 0.0f, 0.0f));
+		m_drawer.AddObject(object);
+	}
+
+
+	for(size_t i = 0; i < fbxPaths.size(); ++i)
+	{
+		auto object = std::make_shared<CEnvironmentObject>();
+		object->Init(fbxPaths[i], "./textures/colormap.png");
+		object->SetScale(scales[i]);
+		object->SetPosition(positions[i]);
+		object->SetRotation(glm::vec3(glm::radians(270.0f), 0.0f, 0.0f));
+
 		m_drawer.AddObject(object);
 	}
 

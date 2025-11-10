@@ -30,8 +30,13 @@ namespace
 
 CEnvironmentObject::CEnvironmentObject()
 {
+
+}
+
+void CEnvironmentObject::Init(const std::string& fbx, const char* texture)
+{
 	Assimp::Importer importer;
-	importer.ReadFile("./models/Beach Scene.fbx", aiProcess_Triangulate | aiProcess_GenSmoothNormals);
+	importer.ReadFile(fbx, aiProcess_Triangulate | aiProcess_GenSmoothNormals);
 	auto scene = importer.GetScene();
 	assert(scene->HasMeshes());
 	auto mesh = scene->mMeshes[0];
@@ -75,7 +80,7 @@ CEnvironmentObject::CEnvironmentObject()
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * indices.size(), indices.data(), GL_STATIC_DRAW);
 	}
 
-	m_texture = OpenGl::LoadTextureFromFile("./textures/Atlas.png");
+	m_texture = OpenGl::LoadTextureFromFile(texture);
 
 	m_matricesUniformBuffer = OpenGl::CBuffer::Create();
 	m_lightsUniformBuffer = OpenGl::CBuffer::Create();
