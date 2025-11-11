@@ -153,7 +153,7 @@ void CSkyboxObject::Draw(const VIEW_PARAMS& viewParams)
 	glDepthFunc(GL_LEQUAL);
 	glDepthMask(GL_FALSE);
 
-	glDisable(GL_CULL_FACE); // Disable so interior is visible, re-enabled after draw
+	glDisable(GL_CULL_FACE);
 
 	glDisable(GL_BLEND);
 

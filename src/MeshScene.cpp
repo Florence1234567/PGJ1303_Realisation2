@@ -2,10 +2,19 @@
 #include <glm/ext/matrix_clip_space.hpp>
 #include "EnvironmentObject.h"
 #include "BillboardObject.h"
+#include "SkyboxObject.h"
 #include "OpenGlUtils.h"
 
 CMeshScene::CMeshScene()
 {
+	{
+		auto skybox = std::make_shared<CSkyboxObject>();
+		skybox->Init("./models/sphere.fbx", "./textures/clouds_anime.png");
+		skybox->SetScale(glm::vec3(200.0f));
+		skybox->SetPosition(glm::vec3(0.0, 0.0, 0.0));
+		m_drawer.AddObject(skybox);
+	}
+
 	std::vector<std::string> fbxPaths = {
 	    "./models/hills01.fbx",
 	    "./models/tent_red.fbx",
@@ -114,6 +123,16 @@ CMeshScene::CMeshScene()
 		auto object = std::make_shared<CBillboardObject>();
 		object->SetIsTransparent(true);
 		object->SetScale(glm::vec3(2.0f));
+		object->SetPosition(glm::vec3(-10.0, 5.35, 0.5));
+		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
+		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/explosion.png"));
+		m_drawer.AddObject(object);
+	}
+
+	{
+		auto object = std::make_shared<CBillboardObject>();
+		object->SetIsTransparent(true);
+		object->SetScale(glm::vec3(2.0f));
 		object->SetPosition(glm::vec3(-6.0, 7.35, 5.5));
 		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
 		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/dipsy.png"));
@@ -122,7 +141,7 @@ CMeshScene::CMeshScene()
 
 	{
 		auto object = std::make_shared<CBillboardObject>();
-		object->SetIsTransparent(false);
+		object->SetIsTransparent(true);
 		object->SetScale(glm::vec3(2.0f));
 		object->SetPosition(glm::vec3(-13.0, 4.35, 7.5));
 		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
@@ -132,7 +151,7 @@ CMeshScene::CMeshScene()
 
 	{
 		auto object = std::make_shared<CBillboardObject>();
-		object->SetIsTransparent(false);
+		object->SetIsTransparent(true);
 		object->SetScale(glm::vec3(1.8f));
 		object->SetPosition(glm::vec3(1, 7.35, 0));
 		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
@@ -142,7 +161,7 @@ CMeshScene::CMeshScene()
 
 	{
 		auto object = std::make_shared<CBillboardObject>();
-		object->SetIsTransparent(false);
+		object->SetIsTransparent(true);
 		object->SetScale(glm::vec3(2.0f));
 		object->SetPosition(glm::vec3(-14.5, 3.75, 9));
 		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
@@ -153,9 +172,9 @@ CMeshScene::CMeshScene()
 	{
 		auto object = std::make_shared<CBillboardObject>();
 		object->SetIsTransparent(true);
-		object->SetScale(glm::vec3(7.0f));
-		object->SetPosition(glm::vec3(100, 10.35, 100));
-		object->SetRotation(glm::quat(glm::vec3(0, 0, 0)));
+		object->SetScale(glm::vec3(70.0f));
+		object->SetPosition(glm::vec3(100, 100, 100));
+		object->SetRotation(glm::quat(glm::vec3(0, 0.55, 0)));
 		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/sun.png"));
 		m_drawer.AddObject(object);
 	}
