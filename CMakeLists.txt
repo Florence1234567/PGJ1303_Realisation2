@@ -6,7 +6,7 @@ add_subdirectory(./deps/glfw)
 add_subdirectory(./deps/glm)
 add_subdirectory(./deps/assimp)
 
-add_library(glad ./deps/glad/src/gl.c)
+add_library(glad ./deps/glad/src/gl.c )
 target_include_directories(glad PUBLIC ./deps/glad/include ./deps/stb)
 
 add_executable(pgj1303
@@ -29,7 +29,9 @@ add_executable(pgj1303
     ./src/SceneObject.h
     ./src/EnvironmentObject.cpp
     ./src/EnvironmentObject.h
-)
+    ./src/SkyboxObject.cpp
+    ./src/SkyboxObject.h
+ )
 
 set_property(TARGET pgj1303 PROPERTY CXX_STANDARD 20)
 set_property(TARGET pgj1303 PROPERTY DEBUGGER_WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
