@@ -33,6 +33,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/out/build/x64-Debug/deps/glfw/src/glfw3.lib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/choui/OneDrive/Documents/GitHub/PGJ1303_Realisation2/out/build/x64-Debug/deps/glfw/src/glfw3d.lib")
 endif()
 
