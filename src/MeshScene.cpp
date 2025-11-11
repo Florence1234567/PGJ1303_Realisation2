@@ -103,19 +103,60 @@ CMeshScene::CMeshScene()
 	{
 		auto object = std::make_shared<CBillboardObject>();
 		object->SetIsTransparent(true);
-		object->SetScale(glm::vec3(0.10f));
-		object->SetPosition(glm::vec3(0.00, 0.25, 0.08f));
+		object->SetScale(glm::vec3(2.0f));
+		object->SetPosition(glm::vec3(-4.0, 7.35, 5.5));
 		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
-		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/badger.png"));
+		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/fire.png"));
 		m_drawer.AddObject(object);
 	}
 
 	{
 		auto object = std::make_shared<CBillboardObject>();
 		object->SetIsTransparent(true);
-		object->SetScale(glm::vec3(0.10f, 0.30f, 0.10f));
-		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/palmier.png"));
-		object->SetPosition(glm::vec3(0.10, 0.45, 0.10));
+		object->SetScale(glm::vec3(2.0f));
+		object->SetPosition(glm::vec3(-6.0, 7.35, 5.5));
+		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
+		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/dipsy.png"));
+		m_drawer.AddObject(object);
+	}
+
+	{
+		auto object = std::make_shared<CBillboardObject>();
+		object->SetIsTransparent(false);
+		object->SetScale(glm::vec3(2.0f));
+		object->SetPosition(glm::vec3(-13.0, 4.35, 7.5));
+		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
+		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/lala.png"));
+		m_drawer.AddObject(object);
+	}
+
+	{
+		auto object = std::make_shared<CBillboardObject>();
+		object->SetIsTransparent(false);
+		object->SetScale(glm::vec3(1.8f));
+		object->SetPosition(glm::vec3(1, 7.35, 0));
+		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
+		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/tinkywinky.png"));
+		m_drawer.AddObject(object);
+	}
+
+	{
+		auto object = std::make_shared<CBillboardObject>();
+		object->SetIsTransparent(false);
+		object->SetScale(glm::vec3(2.0f));
+		object->SetPosition(glm::vec3(-14.5, 3.75, 9));
+		object->SetRotation(glm::quat(glm::vec3(0, glm::quarter_pi<float>(), 0)));
+		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/po.png"));
+		m_drawer.AddObject(object);
+	}
+
+	{
+		auto object = std::make_shared<CBillboardObject>();
+		object->SetIsTransparent(true);
+		object->SetScale(glm::vec3(7.0f));
+		object->SetPosition(glm::vec3(100, 10.35, 100));
+		object->SetRotation(glm::quat(glm::vec3(0, 0, 0)));
+		object->SetTexture(OpenGl::LoadTextureFromFile("./textures/sun.png"));
 		m_drawer.AddObject(object);
 	}
 
